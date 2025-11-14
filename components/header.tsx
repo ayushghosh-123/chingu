@@ -14,7 +14,7 @@ const Header = async () => {
           flex items-center justify-between
           px-6 py-3
           rounded-full
-          border border-white/10
+          border border-white/9
           bg-white/10 
           backdrop-blur-md
           shadow-lg
@@ -25,10 +25,10 @@ const Header = async () => {
       >
         {/* === Logo === */}
         <Link href="/" className="flex items-center space-x-2">
-          <div className="w-9 h-9 bg-gradient-to-br from-orange-400 to-yellow-300 rounded-full flex items-center justify-center">
+          <div className="w-9 h-9 bg-gradient-to-br from-purple-600 to-pink-100 rounded-full flex items-center justify-center">
             <span className="text-white font-bold text-sm">C</span>
           </div>
-          <span className="text-xl md:text-2xl font-bold text-white">
+          <span className="text-xl md:text-2xl font-bold text-black">
             Chingu
           </span>
         </Link>
@@ -41,7 +41,7 @@ const Header = async () => {
                 variant="outline"
                 className="
                   rounded-full 
-                  bg-white/10 
+                  bg-purple-800/50
                   hover:bg-white/20 
                   border-white/20 
                   text-white
