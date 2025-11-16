@@ -1,103 +1,52 @@
 "use client";
 
 import React from "react";
+import TextType from "./TextType";
+import RevolvingEarth from "./Revolvingearth";
 
 const DemoSectionSimple = () => {
     return (
-        <section className="bg-black text-white">
-            <div className="container mx-auto px-4 py-12 md:py-16 lg:py-20">
-                <div className="text-center">
-                    <div className="max-w-4xl mx-auto">
-                        <div className="p-5 sm:p-6 lg:p-9">
-                            <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                                <span className="inline-block opacity-0 animate-slide-in" style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}>See</span>{" "}
-                                <span className="inline-block opacity-0 animate-slide-in bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>Chingu</span>{" "}
-                                <span className="inline-block opacity-0 animate-slide-in" style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}>in Action</span>
-                            </h3> 
+        <section className="relative overflow-hidden py-20 px-4 sm:px-6 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-indigo-900 dark:via-purple-900 dark:to-indigo-800">
+            
+            {/* Soft background circles */}
+            <div className="absolute -top-20 -left-20 h-56 w-56 bg-purple-400/30 dark:bg-purple-700/20 rounded-full blur-3xl" />
+            <div className="absolute top-40 right-0 h-72 w-72 bg-pink-300/30 dark:bg-pink-600/20 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-1/3 h-40 w-40 bg-purple-500/20 dark:bg-purple-700/20 rounded-full blur-3xl" />
 
-                            <p className="text-lg md:text-xl text-gray-300 mb-10">
-                                <span className="inline-block opacity-0 animate-fade-slide" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>Watch how easy it is:</span>{" "}
-                                <span className="inline-block opacity-0 animate-fade-slide font-semibold text-white" style={{ animationDelay: "0.5s", animationFillMode: "forwards" }}>Snap.</span>{" "}
-                                <span className="inline-block opacity-0 animate-fade-slide font-semibold text-white" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>Track.</span>{" "}
-                                <span className="inline-block opacity-0 animate-fade-slide font-semibold text-white" style={{ animationDelay: "0.7s", animationFillMode: "forwards" }}>Done.</span>
-                            </p>
+            <div className="container mx-auto max-w-6xl relative z-10 flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20">
 
-                            <div className="relative rounded-lg sm:rounded-xl overflow-hidden shadow-2xl opacity-0 animate-fade-in-up group" style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}>
-                                <img
-                                    src="/images/demo.png"
-                                    alt="Chingu demo" 
-                                    className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
-                                    style={{ objectFit: "cover" }}
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                            </div>
-                        </div>
+                {/* TEXT AREA */}
+                <div className="w-full lg:w-1/2 text-center lg:text-left mt-10 lg:mt-0">
+
+                    <TextType
+                        text={["See Chingu", "In Action"]}
+                        typingSpeed={70}
+                        pauseDuration={1200}
+                        showCursor={true}
+                        cursorCharacter="|"
+                        className="font-extrabold text-4xl sm:text-5xl md:text-6xl text-purple-900 dark:text-white leading-tight"
+                    />
+
+                    <p className="mt-4 text-lg sm:text-xl text-purple-900/80 dark:text-purple-200">
+                        Watch how easy it is — snap, track, and stay organized effortlessly.
+                    </p>
+
+                    <p className="mt-2 text-lg font-semibold text-purple-900 dark:text-white">
+                        You're always one tap away from progress.
+                    </p>
+                </div>
+
+                {/* EARTH ANIMATION */}
+                <div className="w-full lg:w-1/2 flex justify-center">
+                    <div className="scale-90 sm:scale-100 md:scale-110 transition-all duration-300">
+                        <RevolvingEarth />
                     </div>
                 </div>
+
             </div>
-
-            <style jsx>{`
-                @keyframes fade-in {
-                    from {
-                        opacity: 0;
-
-                    }
-                    to {
-                        opacity: 4;
-                    }
-                }
-
-                @keyframes slide-in {
-                    from {
-                        opacity: 0;
-                        transform: translateY(-10px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(20px);
-                    }
-                }
-
-                @keyframes fade-slide {
-                    from {
-                        opacity: 0;
-                        transform: translateX(-15px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateX(0);
-                    }
-                }
-
-                @keyframes fade-in-up {
-                    from {
-                        opacity: 0;
-                        transform: translateY(30px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-
-                .animate-fade-in {
-                    animation: fade-in 0.8s ease-out;
-                }
-
-                .animate-slide-in {
-                    animation: slide-in 0.6s ease-out;
-                }
-
-                .animate-fade-slide {
-                    animation: fade-slide 0.6s ease-out;
-                }
-
-                .animate-fade-in-up {
-                    animation: fade-in-up 0.9s ease-out;
-                }
-            `}</style>
         </section>
     );
 };
 
 export default DemoSectionSimple;
+

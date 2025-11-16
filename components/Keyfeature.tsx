@@ -51,7 +51,7 @@ export const FEATURES: Feature[] = [
 
 const FeaturesSection = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-t from-purple-300 via-purple-300 to-pink-100 border-white/4 py-24">
+    <section className="relative overflow-hidden bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 border-white/2 py-24">
       <div className="container mx-auto px-4">
         
         {/* Heading */}
@@ -74,7 +74,7 @@ const FeaturesSection = () => {
             style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}
           >
             Your personal finance assistant with{" "}
-            <span className="text-white/90 font-semibold">superpowers</span>
+            <span className="text-white/110 font-semibold">superpowers</span>
           </p>
         </div>
 

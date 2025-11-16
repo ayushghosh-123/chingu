@@ -1,42 +1,51 @@
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Heart } from "lucide-react";
+
 import React from "react";
+import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card";
 
-const PriceSection = () => {
+export default function ThreeDCardDemo() {
   return (
-    <section className="relative bg-black text-white py-24 px-6">
-      {/* Subtle gold glow background */}
-      <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_left,rgba(234,179,8,0.3),transparent_50%),radial-gradient(circle_at_bottom_right,rgba(250,204,21,0.2),transparent_50%)]" />
-
-      <div className="relative container mx-auto text-center">
-        <Card className="max-w-2xl mx-auto bg-black/60 backdrop-blur-md border border-yellow-900/50 shadow-[0_0_30px_rgba(250,204,21,0.1)] rounded-2xl">
-          <CardContent className="p-12">
-            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-yellow-400 to-yellow-200 bg-clip-text text-transparent">
-              Chingu is Free. Forever.
-            </h2>
-            <p className="text-lg text-gray-300 mb-8">
-              Track your expenses effortlessly with your AI-powered finance companion.
-            </p>
-
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-400 hover:to-yellow-300 text-black rounded-full px-8 py-6 text-lg font-semibold shadow-[0_0_25px_rgba(250,204,21,0.4)] hover:shadow-[0_0_35px_rgba(250,204,21,0.6)] transition-all duration-300"
-            >
-              Get Started Free
-              <Heart className="ml-2 h-5 w-5 text-black" />
-            </Button>
-
-            <p className="text-sm text-gray-400 mt-6">
-              Premium insights and features coming soon — join the waitlist!
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-    </section>
+    <CardContainer className="inter-var bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+      <CardBody className="bg-purple-200 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.2] wauto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+        <CardItem
+          translateZ="50"
+          className="text-xl font-bold text-neutral-600 dark:text-white"
+        >
+         Chingu is free to use Forever
+        </CardItem>
+        <CardItem
+          as="p"
+          translateZ="60"
+          className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+        >
+          Start tracking your expense today with yur new ai budddy
+        </CardItem>
+        <CardItem
+          translateZ="100"
+          rotateX={20}
+          rotateZ={-10}
+          className="w-full mt-4"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            height="1000"
+            width="1000"
+            className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+            alt="thumbnail"
+          />
+        </CardItem>
+        <div className="flex justify-between items-center mt-20">
+          <CardItem
+            translateZ={20}
+            translateX={40}
+            as="button"
+            className="px-4 py-2 rounded-xl bg-purple-600 dark:bg-white dark:text-black text-white text-xs font-bold items-center"
+          >
+            Sign up
+          </CardItem>
+        </div>
+      </CardBody>
+    </CardContainer>
   );
-};
-
-export default PriceSection;
+}
